@@ -11,6 +11,10 @@ if (navigator.geolocation) {
   var api = "http://v.juhe.cn/weather/geo?format=2&key="+key+"&lon="+position.coords.longitude
   +"&lat="+position.coords.latitude;
     $.ajax({ 
+    crossDomain: true,
+  xhrFields: {
+    withCredentials: true
+  },
     type:'GET',
     url: api,
     dataType:"jsonp",
