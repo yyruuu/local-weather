@@ -10,11 +10,13 @@ if (navigator.geolocation) {
   var key = "94b2524c92f2d45191576fd17983f214";
   var api = "http://v.juhe.cn/weather/geo?format=2&key="+key+"&lon="+position.coords.longitude
   +"&lat="+position.coords.latitude;
-    $.ajax({ 
+  $.ajaxSetup({
     crossDomain: true,
-  xhrFields: {
-    withCredentials: true
-  },
+    xhrFields: {
+      withCredentials: true
+    }
+  });
+    $.ajax({ 
     type:'GET',
     url: api,
     dataType:"jsonp",
